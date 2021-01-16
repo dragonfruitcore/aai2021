@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<div id="clock"></div>
+<style>
+body {
+   background-color: white;
+}
+#clock {
+  font-family:'Orbitron', sans-serif;
+  color: darkblue;
+  font-size: 56px;
+  
+}
+
+</div>
+</style>
+<script>
+function showTime(){
+    var date = new Date();
+    var h = date.getHours(); // 0 - 23
+    var m = date.getMinutes(); // 0 - 59
+    var s = date.getSeconds(); // 0 - 59
+    var session = "AM";
+    
+    if(h == 0){
+        h = 12;
+    }
+    
+    if(h > 12){
+        h = h - 12;
+        session = "PM";
+    }
+    
+    h = (h < 10) ? "0" + h : h;
+    m = (m < 10) ? "0" + m : m;
+    s = (s < 10) ? "0" + s : s;
+    
+    var time = h + ":" + m + ":" + s + " " + session;
+    document.getElementById("clock").innerText = time;
+    document.getElementById("clock").textContent = time;
+    
+    setTimeout(showTime, 1000);
+    
+}
+
+showTime();
+</script>
+</body>
+</html>
+
+<button class="button"> Home </button>
+<style>
+.button {
+  font-family:'Orbitron', sans-serif;
+  background-color: #b3d6e8;
+  color: #1a5f82;
+  font-size: 30px;
+  border-radius: 20px;
+  width: 30%;
+  height: 58px;
+}
+.button2 {
+  font-family:'Orbitron', sans-serif;
+  background-color: red;
+  color: #1a5f82;
+  font-size: 30px;
+  border-radius: 20px;
+  width: 30%;
+  height: 58px;
+
+}
+.button3 {
+  font-family:'Orbitron', sans-serif;
+  background-color: white;
+  border-color: grey;
+  color: #1a5f82;
+  font-size: 30px;
+  border-radius: 20px;
+  width: 38%;
+  height: 58px;
+
+}
+</div>
+</style>
+
+
+
+<button class="button2"> Sign In </button>
+
+<a href="https://www.apple.com"><button class="button3"><img width="30" height="30" src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/1200px-Google_%22G%22_Logo.svg.png">  Google Sign In </button></a>
+
+
+
+
+
+
